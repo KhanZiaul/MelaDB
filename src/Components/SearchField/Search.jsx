@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Cards from '../Cards/Cards';
 
-const Search = () => {
-
+const Search = (props) => {
     const [searchValue,setValue] = useState('');
     const [datas,setDatas] = useState([])
 
@@ -17,16 +15,12 @@ const Search = () => {
         .then(datas => setDatas(datas.meals))
     },[searchValue,datas])
 
-    function getData(){
-        {
-            datas.map(data => <Cards meal={data}></Cards>)
-        }
-        // console.log(datas)
-    }
+    const searchResult = props.searchResult;
+    
     return (
         <div className='flex gap-4 justify-center mt-7'>
            <input onChange={searchField} type="text" placeholder="Type here" className="input input-bordered input-warning w-full max-w-xs" />
-           <button onClick={getData} className="btn btn-warning">Search</button>
+           <button onClick={() => searchResult(datas)} className="btn btn-warning">Search</button>
         </div>
     );
 };
