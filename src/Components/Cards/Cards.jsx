@@ -5,13 +5,20 @@ const Cards = ({ datas }) => {
     console.log(datas)
 
     return (
-        
-        <div>
+
+        <div className='grid grid-cols-3 my-8 gap-5 px-5'>
             {
-                datas ? datas.map((data,index) => <img key={index} src={data.strMealThumb
-                } alt="" />) :''
+                datas ? datas.map((data) => {
+                    return (
+                        <div key={data.idMeal} className='border-2 rounded-xl p-5'>
+                            <img className='rounded-xl' src={data.strMealThumb
+                            } alt="" />
+                            <h2 className='text-3xl text-center my-5'>{data.strMeal}</h2>
+                        </div>
+                    )
+                }) : ''
             }
-            
+
         </div>
     );
 };
