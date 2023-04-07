@@ -1,7 +1,7 @@
 import Cards from './Components/Cards/Cards'
 import Header from './Components/Header/Header'
 import Search from './Components/SearchField/Search'
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
   const [datas,setDatas] = useState([])

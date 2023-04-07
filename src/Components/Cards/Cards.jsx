@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Cards = (props) => {
-    console.log(props)
+const Cards = ({ datas }) => {
+
+    console.log(datas)
+
     return (
+        
         <div>
+            {
+                datas ? datas.map((data,index) => <img key={index} src={data.strMealThumb
+                } alt="" />) :''
+            }
             
         </div>
     );
